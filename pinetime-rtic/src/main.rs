@@ -158,14 +158,14 @@ const APP: () = {
 
         // Battery status
         let battery = battery::BatteryStatus::init(
-            gpio.p0_12.into_floating_input(),
+            gpio.p0_19.into_floating_input(),
             gpio.p0_31.into_floating_input(),
             SAADC,
         );
 
         // Enable button
-        gpio.p0_15.into_push_pull_output(Level::High);
-        let button = gpio.p0_13.into_floating_input().degrade();
+        //gpio.p0_15.into_push_pull_output(Level::High);
+        let button = gpio.p0_17.into_floating_input().degrade();
 
         // Get bluetooth device address
         let device_address = get_device_address();

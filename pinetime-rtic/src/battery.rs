@@ -6,7 +6,7 @@ use nrf52832_hal::target::SAADC;
 
 pub struct BatteryStatus {
     /// Pin P0.12: High = battery, Low = charging.
-    pin_charge_indication: p0::P0_12<Input<Floating>>,
+    pin_charge_indication: p0::P0_19<Input<Floating>>,
 
     /// Pin P0.31: Voltage level
     pin_voltage: p0::P0_31<Input<Floating>>,
@@ -24,7 +24,7 @@ pub struct BatteryStatus {
 impl BatteryStatus {
     /// Initialize the battery status.
     pub fn init(
-        pin_charge_indication: p0::P0_12<Input<Floating>>,
+        pin_charge_indication: p0::P0_19<Input<Floating>>,
         mut pin_voltage: p0::P0_31<Input<Floating>>,
         #[allow(non_snake_case)] SAADC: SAADC,
     ) -> Self {
